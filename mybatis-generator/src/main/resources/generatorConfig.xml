@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--数据源配置文件路径-->
+    <properties resource="mysql.properties"/>
+    <!--<properties resource="oracle.properties"/>-->
+    <context id="dataSource" targetRuntime="MyBatis3" defaultModelType="flat">
+        <!--
+            autoDelimitKeywords: 当表名或者字段名为SQL关键字时 可以设置属性为true
+            MBG会自动给表名或字段名添加分隔符
+        -->
+        <property name="autoDelimitKeywords" value="true"/>
+        <!--
+            beginDelimitKeywords||endDelimitKeywords: 默认值为双引号("")
+            在MySQL中不可以这么写 所以还要将这两个默认值改为反单引号(`)
+        -->
+        <property name="beginDelimitKeywords" value="`"/>
+        <property name="endDelimitKeywords" value="`"/>
+
+        <commentGenerator>
+            <!--
+                是否去除自动生成的注释 true:是  false:否
+            -->
+            <property name="suppressAllComments" value="true"/>
+            <!--阻止生成注释包含时间戳-->
+            <property name="supressDate" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="${jdbc.driver}" connectionURL="${db.url}" userId="${db.username}"
+                        password="${db.password}"/>
+        <javaTypeResolver>
+            <!--
+                默认false 把JDBC DECIMAL和NUMBERIC类型解析为Integer
+                    true 把JDBC DECIMAL和NUMBERIC类型解析为java.math.BigDecimal
+            -->
+            <property name="forceBigDecimal" value="false"/>
+        </javaTypeResolver>
+        <!--实体类生成的路径-->
+        <javaModelGenerator targetPackage="${targetModelPackage}" targetProject="${targetJavaProject}">
+            <!--enableSubPackages: 是否让schema作为包的后缀-->
+            <property name="enableSubPackages" value="false"/>
+            <!--从数据库返回的值清理前后空格-->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--XML生成的路径-->
+        <sqlMapGenerator targetPackage="${targetXMLPackage}" targetProject="${targetJavaProject}">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+        <!--接口生成的路径-->
+        <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}" type="XMLMAPPER">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+        <!--表名-->
+        <table tableName="payment" domainObjectName="Payment" schema="test">
+            <!--
+                true: 字段为下划线的转换成驼峰命名
+            -->
+            <property name="useActualColumnsNames" value="false"/>
+            <!--有些表的字段需要指定java类型-->
+            <!--<columnOverride column="" jdbcType=""/>-->
+        </table>
+    </context>
+</generatorConfiguration>
