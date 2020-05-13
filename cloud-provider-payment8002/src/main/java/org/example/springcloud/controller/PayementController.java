@@ -60,4 +60,9 @@ public class PayementController {
             return new CommonResult<>(444, "查询数据失败, serverPort" + serverPort);
         }
     }
+
+    @GetMapping(value = "/payment/lb")
+    public String getServerPort(){
+        return serverPort;
+    }
 }
