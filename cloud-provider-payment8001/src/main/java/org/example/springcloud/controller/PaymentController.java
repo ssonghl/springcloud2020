@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 /**
  * @author: songhl
  * @date: 2020/5/8 16:37:52
@@ -19,8 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Slf4j
-public class PayementController {
-    @Autowired
+public class PaymentController {
+    @Resource
     private PaymentService paymentService;
 
     @Value("${server.port}")
@@ -61,6 +63,10 @@ public class PayementController {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @GetMapping(value = "/payment/lb")
     public String getServerPort(){
         return serverPort;

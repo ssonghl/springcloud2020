@@ -9,9 +9,14 @@ eureka:
     fetch-registry: false #false表示自己端就是注册中心  职责就是维护服务实例 并不需要去检索服务
     service-url:
       # 单机版
-      #defaultZone: http://eureka7001.com:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
       # 集群版
-      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+      #defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
   server:
     #enable-self-preservation: false  #关闭自我保护机制 保证不可用服务被及时剔除
     #eviction-interval-timer-in-ms: 2000  #时间间隔
+
+spring:
+  devtools:
+    restart:
+      enabled: false #热部署是否开启

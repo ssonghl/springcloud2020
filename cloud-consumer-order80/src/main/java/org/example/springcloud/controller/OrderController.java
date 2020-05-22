@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.Resource;
 import java.net.URI;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -27,13 +27,13 @@ import java.util.List;
 public class OrderController {
     public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
-    @Autowired
+    @Resource
     private RestTemplate restTemplate;
 
-    @Autowired
+    @Resource
     private LoadBalancer loadBalancer;
 
-    @Autowired
+    @Resource
     private DiscoveryClient discoveryClient;
 
     @GetMapping(value = "/consumer/payment/create")
