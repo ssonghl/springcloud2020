@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @description: 启动类
  */
 @SpringBootApplication
-public class LogAopApplication {
+public class LogAopApplication8080 {
     public static void main(String[] args) {
-        SpringApplication.run(LogAopApplication.class, args);
+        SpringApplication.run(LogAopApplication8080.class, args);
     }
 }
