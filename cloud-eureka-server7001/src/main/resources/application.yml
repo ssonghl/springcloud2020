@@ -19,4 +19,4 @@ eureka:
 spring:
   devtools:
     restart:
-      enabled: false #热部署是否开启
+      enabled: false #热部署是否开启  false关闭

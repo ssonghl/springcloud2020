@@ -1,8 +1,6 @@
 package org.example.springcloud.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.springcloud.entities.CommonResult;
-import org.example.springcloud.entities.Payment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +24,7 @@ public class OrderController {
 
     @GetMapping(value = "/consumer/payment/get/{id}")
     public String getPaymentById(@PathVariable Long id) {
-        log.info("sdsd");
+        log.info("/consumer/payment/get/{}", id);
         return restTemplate.getForObject(PAYMENT_URL + "/payment/consul/get/" + id, String.class);
     }
 }

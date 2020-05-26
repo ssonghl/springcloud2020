@@ -24,7 +24,7 @@ public class OrderOpenFeignController {
 
     @GetMapping(value = "/consumer/payment/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable Long id) {
-        log.info("sdsd");
+        log.info("/consumer/payment/get/{}", id);
         return openFeignPaymentService.getPaymentById(id);
     }
 }
