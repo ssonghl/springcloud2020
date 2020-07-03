@@ -52,7 +52,7 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!--表名-->
-        <table tableName="payment" domainObjectName="Payment" schema="test">
+        <table tableName="tb_type_template" domainObjectName="TypeTemplate" schema="mall_icbc">
             <!--
                 true: 字段为下划线的转换成驼峰命名
             -->

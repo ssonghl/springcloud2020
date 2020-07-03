@@ -25,9 +25,9 @@
                 targetXMLPackage:生成mapper xml 的包名
         -->
         <targetJavaProject>${basedir}/src/main/java</targetJavaProject>
-        <targetMapperPackage>org.example.springcloud.dao</targetMapperPackage>
-        <targetModelPackage>org.example.springcloud.entities</targetModelPackage>
-        <targetXMLPackage>org.example.springcloud.mapper</targetXMLPackage>
+        <targetMapperPackage>cn.com.icbc.core.dao</targetMapperPackage>
+        <targetModelPackage>cn.com.icbc.core.entity</targetModelPackage>
+        <targetXMLPackage>cn.com.icbc.core.mapper</targetXMLPackage>
     </properties>
 
     <dependencies>
